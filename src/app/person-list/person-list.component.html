@@ -1,0 +1,8 @@
+<p>Wähle eine Person zum Bearbeiten: </p>
+<div class="person-select">
+    <button class="btn btn-primary btn-sm" *ngFor="let person of personList; index as i" routerLink="/person-detail/{{person.id}}">
+        {{person.firstName}} {{person.surname}} ({{person.mail}}) 
+    </button>
+    <button class="btn btn-secondary btn-sm" routerLink="/add-person">&plus;</button>
+    
+</div>

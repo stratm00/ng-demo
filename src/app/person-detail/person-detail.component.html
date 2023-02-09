@@ -1,0 +1,10 @@
+<button class="btn btn-sm btn-warning" routerLink="">Zurück zum Anfang</button>
+<div class="d-flex" *ngIf="person$ | async as person">
+        <div class="col-md-4">
+         <input type="text" name="firstName" [(ngModel)]="this.newFirstName"><br>
+         <input type="text" name="surname" [(ngModel)]="this.newSurname"><br>
+         <input type="text" name="mail" [(ngModel)]="this.newMail"><br>
+          <button class="btn btn-primary" (click)="updatePerson()">Ändern.</button>
+          <button class="btn btn-danger" (click)="deletePerson()">Person löschen.</button>
+        </div>
+</div>

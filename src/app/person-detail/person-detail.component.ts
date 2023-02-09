@@ -53,6 +53,7 @@ export class PersonDetailComponent implements OnInit{
           mail : this.newMail.trim()
           };
       this.service.updatePerson(update).subscribe();
+      this.router.navigate(["list-people"]);
     }
     deletePerson(): void{
       this.service.removePerson(this.personID).subscribe();

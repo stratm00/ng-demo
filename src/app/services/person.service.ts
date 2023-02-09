@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'; 
 import { MessageService } from './message.service';
-import { Person } from './person';
-import { catchError, tap } from 'rxjs/operators';
+import { Person } from '../person';
+import { catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 @Injectable({
   providedIn: 'root'
@@ -46,6 +46,9 @@ export class PersonService {
     .pipe(
       catchError(this.handleError<Person>('getPerson'))
     );
+  }
+  resetDb():void{
+    this.http.post("/commands/resetDb", "", this.httpOptions).subscribe();
   }
   private log(message: string){
       this.messageService.add(message);
